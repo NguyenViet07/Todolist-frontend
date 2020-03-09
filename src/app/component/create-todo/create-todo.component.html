@@ -1,0 +1,9 @@
+<h2>My To Do List</h2>
+<form class="header" [formGroup]="addTodoForm" (ngSubmit)="addTodo()">
+  <input type="text" formControlName="name" placeholder="Tiêu đề">
+  <br>
+  <br>
+  <input type="text" formControlName="description" placeholder="Nội dung công việc">
+  <br>
+  <input type="submit" class="addBtn" value="add">
+</form>

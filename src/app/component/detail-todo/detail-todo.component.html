@@ -1,0 +1,21 @@
+<p>detail-todo works!</p>
+<a [routerLink]="['']">Lists Todos</a>
+<div>
+  <p *ngIf="!todo.status">Name: {{todo.name}}</p>
+ <p><del *ngIf="todo.status">Name: {{todo.name}}</del></p>
+  <p *ngIf="!todo.status">Title: {{todo.description}}</p>
+  <p><del *ngIf="todo.status">Title: {{todo.description}}</del></p>
+
+
+<!--  <button *ngIf="!todo.status" (click)="done()">Chưa xong</button>-->
+<!--  <button *ngIf="todo.status" (click)="done() ">Xong</button>-->
+
+
+  <input type = "checkbox" class="checkbox" [ngModel]="todo.status" (click)="done()">
+  <span *ngIf="!todo.status">Chưa xong</span>
+  <span *ngIf="todo.status">Xong</span>
+ <br>
+  <br>
+  <button (click)="delete(todo.id)">Del</button>
+</div>
+<app-edit-todo></app-edit-todo>
