@@ -1,8 +1,11 @@
-<p>search works!</p>
+<app-create-todo></app-create-todo>
+
+<br>
+
 <div class="form-group">
   <form [formGroup]="searchTodoFrom" (ngSubmit)="search()">
 <!--    <label for="search"></label>-->
-    <input type="text" class="form-control" id="search" formControlName="name">
+    <input type="text" class="form-control" formControlName="name">
     <button type="submit" class="btn btn-primary">
       Tìm kiếm
     </button>

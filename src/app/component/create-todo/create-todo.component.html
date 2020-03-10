@@ -1,4 +1,4 @@
-<h2>My To Do List</h2>
+<h2 >My To Do List</h2>
 <form class="header" [formGroup]="addTodoForm" (ngSubmit)="addTodo()">
   <input type="text" formControlName="name" placeholder="Tiêu đề">
   <br>
@@ -6,7 +6,8 @@
   <input type="text" formControlName="description" placeholder="Nội dung công việc">
   <br>
 
-  <select  class="form-control form-control-lg" formControlName="rank"  >
+  <select  class="form-control form-control-lg" placeholder="Nội dung công việc" formControlName="rank"  >
+    <option value=""> -- Chọn mức độ ưu tiên cho công việc -- </option>
     <option value="-1">Thấp</option>
     <option value="0">Trung bình</option>
     <option value="1">Cao</option>

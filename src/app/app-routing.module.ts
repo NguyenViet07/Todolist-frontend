@@ -5,6 +5,7 @@ import {EditTodoComponent} from './component/edit-todo/edit-todo.component';
 import {ListTodoComponent} from './component/list-todo/list-todo.component';
 import {CreateTodoComponent} from './component/create-todo/create-todo.component';
 import {SearchComponent} from './component/search/search.component';
+import {ListTodoRankComponent} from './component/list-todo-rank/list-todo-rank.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path: '',
     component: ListTodoComponent
+  },
+  {
+    path: 'list-todo-rank',
+    component: ListTodoRankComponent
   },
   {
     path: 'create-todo',

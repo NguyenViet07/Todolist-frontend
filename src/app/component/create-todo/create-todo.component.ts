@@ -27,13 +27,19 @@ export class CreateTodoComponent implements OnInit {
       status: false,
       rank: this.addTodoForm.get('rank').value
     };
-    this.todoService.create(this.todo).subscribe(() => {
-      console.log('thành công!');
-      console.log(this.todo);
-      // location.reload();
-    }, error => {
-      console.log(error);
-    });
+    if (!this.todo.name) {
+      alert('chưa có tên!');
+    } else if (!this.todo.rank) {
+      alert('chưa chọn mức độ ưu tiên');
+    } else {
+      this.todoService.create(this.todo).subscribe(() => {
+        console.log('thành công!');
+        console.log(this.todo);
+        location.reload();
+      }, error => {
+        console.log(error);
+      });
+    }
   }
 
 }

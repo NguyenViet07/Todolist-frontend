@@ -35,4 +35,8 @@ export class TodoService {
   search(name: string): Observable<ToDo[]> {
     return this.http.get<ToDo[]>(this.API_URL + '?name=' + name);
   }
+
+  rank(): Observable<ToDo[]> {
+    return this.http.get<ToDo[]>(this.API_URL + '/rank');
+  }
 }

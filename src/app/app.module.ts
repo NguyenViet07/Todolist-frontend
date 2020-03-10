@@ -10,6 +10,7 @@ import { CreateTodoComponent } from './component/create-todo/create-todo.compone
 import { EditTodoComponent } from './component/edit-todo/edit-todo.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SearchComponent } from './component/search/search.component';
+import { ListTodoRankComponent } from './component/list-todo-rank/list-todo-rank.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,8 @@ import { SearchComponent } from './component/search/search.component';
     DetailTodoComponent,
     CreateTodoComponent,
     EditTodoComponent,
-    SearchComponent
+    SearchComponent,
+    ListTodoRankComponent
   ],
   imports: [
     BrowserModule,
