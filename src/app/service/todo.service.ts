@@ -31,4 +31,8 @@ export class TodoService {
   edit(todo: ToDo): Observable<ToDo> {
     return this.http.put<ToDo>(this.API_URL, todo);
   }
+
+  search(name: string): Observable<ToDo[]> {
+    return this.http.get<ToDo[]>(this.API_URL + '?name=' + name);
+  }
 }

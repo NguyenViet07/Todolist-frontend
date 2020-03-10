@@ -9,13 +9,15 @@ import { DetailTodoComponent } from './component/detail-todo/detail-todo.compone
 import { CreateTodoComponent } from './component/create-todo/create-todo.component';
 import { EditTodoComponent } from './component/edit-todo/edit-todo.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { SearchComponent } from './component/search/search.component';
 @NgModule({
   declarations: [
     AppComponent,
     ListTodoComponent,
     DetailTodoComponent,
     CreateTodoComponent,
-    EditTodoComponent
+    EditTodoComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
