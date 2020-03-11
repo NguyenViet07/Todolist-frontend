@@ -6,7 +6,7 @@
   <input type="text" formControlName="description" placeholder="Nội dung công việc">
   <br>
 
-  <select  class="form-control form-control-lg" placeholder="Nội dung công việc" formControlName="rank"  >
+  <select  class="form-control form-control-lg" formControlName="rank"  >
     <option value=""> -- Chọn mức độ ưu tiên cho công việc -- </option>
     <option value="-1">Thấp</option>
     <option value="0">Trung bình</option>
@@ -15,3 +15,14 @@
   <input type="submit" class="addBtn" value="add">
   <br>
 </form>
+<br>
+<div>
+  <button type="button" class="btn btn-outline-info" (click)="search()">Tìm kiếm</button>
+  <button type="button" class="btn btn-outline-secondary" (click)="all()">All</button>
+  <button type="button" class="btn btn-outline-danger" (click)="higth()">Cao</button>
+  <button type="button" class="btn btn-outline-warning" (click)="medium()">Trung Bình</button>
+  <button type="button" class="btn btn-outline-success" (click)="low()">Thấp</button>
+  <button type="button" class="btn btn-outline-primary" (click)="rank()" >Sắp xếp</button>
+
+</div>
+

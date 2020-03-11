@@ -6,6 +6,9 @@ import {ListTodoComponent} from './component/list-todo/list-todo.component';
 import {CreateTodoComponent} from './component/create-todo/create-todo.component';
 import {SearchComponent} from './component/search/search.component';
 import {ListTodoRankComponent} from './component/list-todo-rank/list-todo-rank.component';
+import {HightListTodoComponent} from './component/hight-list-todo/hight-list-todo.component';
+import {MediumListTodoComponent} from './component/medium-list-todo/medium-list-todo.component';
+import {LowListTodoComponent} from './component/low-list-todo/low-list-todo.component';
 
 
 const routes: Routes = [
@@ -32,6 +35,18 @@ const routes: Routes = [
   {
     path: 'search',
     component: SearchComponent
+  },
+  {
+    path: 'hight-list-todo',
+    component: HightListTodoComponent
+  },
+  {
+    path: 'medium-list-todo',
+    component: MediumListTodoComponent
+  },
+  {
+    path: 'low-list-todo',
+    component: LowListTodoComponent
   }
 ];
 

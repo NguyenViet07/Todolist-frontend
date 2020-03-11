@@ -40,7 +40,8 @@ export class EditTodoComponent implements OnInit {
       id: this.todo.id,
       status: this.todo.status,
       name: this.editTodoForm.value.name,
-      description: this.editTodoForm.value.description
+      description: this.editTodoForm.value.description,
+      rank: this.todo.rank
     };
     this.todoService.edit(todo1).subscribe(() => {
       console.log(todo1);

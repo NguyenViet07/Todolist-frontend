@@ -13,7 +13,6 @@ import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 export class ListTodoComponent implements OnInit {
   todos: ToDo[] = [];
   todo: ToDo;
-  sub: Subscription;
 
   constructor(private todoService: TodoService,
               private activatedRouter: ActivatedRoute,
@@ -65,5 +64,9 @@ export class ListTodoComponent implements OnInit {
       console.log(error);
     });
     this.route.navigate(['']);
+  }
+
+  detail(id: string) {
+    this.route.navigate(['detail-todo', id]);
   }
 }

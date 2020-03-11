@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ToDo} from '../../model/toDo';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {TodoService} from '../../service/todo.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-create-todo',
@@ -13,11 +14,13 @@ export class CreateTodoComponent implements OnInit {
   addTodoForm: FormGroup;
 
   constructor(private todoService: TodoService,
-              private fb: FormBuilder) {
+              private fb: FormBuilder,
+              private route: Router) {
   }
 
   ngOnInit(): void {
     this.addTodoForm = this.fb.group({name: [''], description: [''], rank: ['']});
+
   }
 
   addTodo() {
@@ -41,5 +44,26 @@ export class CreateTodoComponent implements OnInit {
       });
     }
   }
+
+
+  all() {
+    this.route.navigate(['']);
+  }
+  rank() {
+    this.route.navigate(['list-todo-rank']);
+  }
+  higth() {
+    this.route.navigate(['hight-list-todo']);
+  }
+  medium() {
+    this.route.navigate(['medium-list-todo']);
+  }
+  low() {
+    this.route.navigate(['low-list-todo']);
+  }
+  search() {
+    this.route.navigate(['search']);
+  }
+
 
 }

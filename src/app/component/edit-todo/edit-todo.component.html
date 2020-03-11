@@ -1,32 +1,56 @@
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Hello, world!</title>
+</head>
+<body>
+
 <p>edit-todo</p>
-<form [formGroup]="editTodoForm" (ngSubmit)="editTodo()">
-  <label>Name: </label>
-  <input type="text" [(ngModel)]="todo.name"  formControlName="name">
+
+<form  [formGroup]="editTodoForm" (ngSubmit)="editTodo()">
+
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Name: </label>
+    <input type="email" class="form-control" id="exampleFormControlInput1"
+           [(ngModel)]="todo.name"  formControlName="name">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Title: </label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" type="text"
+              formControlName="description" [(ngModel)]="todo.description"></textarea>
+  </div>
+
+<!--  <select  class="form-control form-control-lg" formControlName="rank" >-->
+<!--    <option value=""> &#45;&#45; Chọn mức độ ưu tiên cho công việc &#45;&#45; </option>-->
+<!--    <option value="-1">Thấp</option>-->
+<!--    <option value="0">Trung bình</option>-->
+<!--    <option value="1">Cao</option>-->
+<!--  </select>-->
   <br>
-  <label>Title: </label>
-  <input type="text" formControlName="description" [(ngModel)]="todo.description">
-  <button type="submit" >Submit</button>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
 
-<!--<div class="formthree ptb-100">-->
-<!--  <div class="container">-->
-<!--    <div class="row">-->
-<!--      <div class="col-md-8 col-md-offset-2">-->
-<!--        <form>-->
-<!--          <div class="row">-->
-<!--            <div class="col-md-6">-->
-<!--              <div class="form-group"> <label class="sr-only">Name</label> <input type="text" class="form-control" required="" id="nameSix" placeholder="Your Name"> </div>-->
-<!--            </div>-->
-<!--            <div class="col-md-6">-->
-<!--              <div class="form-group"> <label class="sr-only">Email</label> <input type="email" class="form-control" required="" id="emailSix" placeholder="Email Address"> </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          &lt;!&ndash;end of /.row&ndash;&gt;-->
-<!--          <div class="form-group"> <label class="sr-only">Message</label> <textarea class="form-control" required="" rows="7" placeholder="Write Message"></textarea> </div> <button type="submit" class="btn btn-primary">Send Message</button>-->
-<!--        </form>-->
-<!--      </div> &lt;!&ndash; /.col-md-8 &ndash;&gt;-->
-<!--    </div> &lt;!&ndash; /.row &ndash;&gt;-->
-<!--  </div> &lt;!&ndash; /.container &ndash;&gt;-->
-<!--</div>-->
+
 

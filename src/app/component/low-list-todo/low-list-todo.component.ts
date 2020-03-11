@@ -4,24 +4,24 @@ import {TodoService} from '../../service/todo.service';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
-  selector: 'app-list-todo-rank',
-  templateUrl: './list-todo-rank.component.html',
-  styleUrls: ['./list-todo-rank.component.scss']
+  selector: 'app-low-list-todo',
+  templateUrl: './low-list-todo.component.html',
+  styleUrls: ['./low-list-todo.component.scss']
 })
-export class ListTodoRankComponent implements OnInit {
- todos: ToDo[] = [];
- todo: ToDo;
+export class LowListTodoComponent implements OnInit {
+  todos: ToDo[] = [];
+  todo: ToDo;
   constructor(private todoService: TodoService,
               private activatedRouter: ActivatedRoute,
               private route: Router) { }
 
   ngOnInit(): void {
-    this.todoService.rank().subscribe(result => {
+    this.todoService.low().subscribe(result => {
       this.todos = result;
     }, error => {
       console.log('Loi ' + error);
     });
-    console.log(this.todoService.getList());
+    console.log(this.todoService.low());
   }
   editTodo(todo) {
     let index;
@@ -58,10 +58,10 @@ export class ListTodoRankComponent implements OnInit {
     }, error => {
       console.log(error);
     });
-    this.route.navigate(['list-todo-rank']);
+    this.route.navigate(['']);
   }
 
-  detail(id) {
+  detail(id: string) {
     this.route.navigate(['detail-todo', id]);
   }
 }

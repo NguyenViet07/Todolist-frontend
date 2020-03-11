@@ -11,6 +11,9 @@ import { EditTodoComponent } from './component/edit-todo/edit-todo.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SearchComponent } from './component/search/search.component';
 import { ListTodoRankComponent } from './component/list-todo-rank/list-todo-rank.component';
+import { LowListTodoComponent } from './component/low-list-todo/low-list-todo.component';
+import { MediumListTodoComponent } from './component/medium-list-todo/medium-list-todo.component';
+import { HightListTodoComponent } from './component/hight-list-todo/hight-list-todo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +22,10 @@ import { ListTodoRankComponent } from './component/list-todo-rank/list-todo-rank
     CreateTodoComponent,
     EditTodoComponent,
     SearchComponent,
-    ListTodoRankComponent
+    ListTodoRankComponent,
+    LowListTodoComponent,
+    MediumListTodoComponent,
+    HightListTodoComponent
   ],
   imports: [
     BrowserModule,

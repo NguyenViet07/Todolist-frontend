@@ -1,25 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Hello, world!</title>
+</head>
+<body>
 <app-create-todo></app-create-todo>
-
 <br>
-
 <div class="form-group">
   <form [formGroup]="searchTodoFrom" (ngSubmit)="search()">
-<!--    <label for="search"></label>-->
-    <input type="text" class="form-control" formControlName="name">
-    <button type="submit" class="btn btn-primary">
-      Tìm kiếm
+<input type="text" class="form-control" formControlName="name">
+    <br>
+ <button type="submit" class="btn btn-info"  >
+      <span class="glyphicon glyphicon-search"></span> Search
     </button>
   </form>
 </div>
 <div *ngIf="todoList.length>0">
   <div class="row">
-      <span class="col-md-6 col-lg-4 mb-5 mb-lg-5" *ngFor="let todo of todoList">
-          <h2 >{{todo.name}}</h2>
-          <h2 >{{todo.description}}</h2>
-          <h2>{{todo.status}}</h2>
-      </span>
+    <table class="table">
+      <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Trạng thái</th>
+        <th scope="col">Tên</th>
+        <th scope="col">Mô tả</th>
+        <th scope="col">Ưu tiên</th>
+        <th scope="col">Chỉnh sửa</th>
+        <th scope="col">Xóa</th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let todo of todoList">
+      <tr>
+        <th scope="row">
+                  <input type = "checkbox" [ngModel]="todo.status" (click)="done(todo.id)" >
+        </th>
+        <td>
+          <span *ngIf="!todo.status"> Chưa xong</span>
+          <span *ngIf="todo.status">Xong</span>
+        </td>
+        <td>{{todo.name}}</td>
+        <td>{{todo.description}}</td>
+        <td>
+          <p class="mb-0" *ngIf="todo.rank== 1" style="color: red" >Cao</p>
+          <p class="mb-0" *ngIf="todo.rank == 0" style="color: orange">Trung Bình</p>
+          <p class="mb-0" *ngIf="todo.rank == -1" style="color: greenyellow">Thấp</p>
+        </td>
+        <td>
+          <label >
+            <span style="text-align: center" class="glyphicon glyphicon-edit" (click)="detail(todo.id)"></span>
+          </label>
+        </td>
+        <td>
+          <label >
+            <span class="glyphicon glyphicon-trash" (click)="delete(todo.id)"> </span>
+          </label>
+        </td>
+      </tr>
+    </table>
   </div>
 </div>
-<div *ngIf="todoList.length == 0">
-  <h2>Không có công việc nào</h2>
+<br>
+<div  >
+  <div *ngIf="todoList.length == 0">
+    <h2>Không có công việc nào</h2>
+  </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+<br>
+
+

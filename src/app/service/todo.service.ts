@@ -39,4 +39,14 @@ export class TodoService {
   rank(): Observable<ToDo[]> {
     return this.http.get<ToDo[]>(this.API_URL + '/rank');
   }
+
+  low(): Observable<ToDo[]> {
+    return this.http.get<ToDo[]>(this.API_URL + '/low');
+  }
+  medium(): Observable<ToDo[]> {
+    return this.http.get<ToDo[]>(this.API_URL + '/medium');
+  }
+  hight(): Observable<ToDo[]> {
+    return this.http.get<ToDo[]>(this.API_URL + '/hight');
+  }
 }
