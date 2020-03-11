@@ -35,12 +35,12 @@
               formControlName="description" [(ngModel)]="todo.description"></textarea>
   </div>
 
-<!--  <select  class="form-control form-control-lg" formControlName="rank" >-->
-<!--    <option value=""> &#45;&#45; Chọn mức độ ưu tiên cho công việc &#45;&#45; </option>-->
-<!--    <option value="-1">Thấp</option>-->
-<!--    <option value="0">Trung bình</option>-->
-<!--    <option value="1">Cao</option>-->
-<!--  </select>-->
+
+  <select  class="form-control form-control-lg" formControlName="rank" [(ngModel)]="todo.rank" >
+    <option value="-1">Thấp</option>
+    <option value="0">Trung bình</option>
+    <option value="1">Cao</option>
+  </select>
   <br>
 
   <button type="submit" class="btn btn-primary">Submit</button>

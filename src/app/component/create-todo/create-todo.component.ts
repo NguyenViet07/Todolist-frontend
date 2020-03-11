@@ -36,7 +36,7 @@ export class CreateTodoComponent implements OnInit {
       alert('chưa chọn mức độ ưu tiên');
     } else {
       this.todoService.create(this.todo).subscribe(() => {
-        console.log('thành công!');
+        alert("thành công!");
         console.log(this.todo);
         location.reload();
       }, error => {

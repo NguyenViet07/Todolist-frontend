@@ -14,6 +14,7 @@ import { ListTodoRankComponent } from './component/list-todo-rank/list-todo-rank
 import { LowListTodoComponent } from './component/low-list-todo/low-list-todo.component';
 import { MediumListTodoComponent } from './component/medium-list-todo/medium-list-todo.component';
 import { HightListTodoComponent } from './component/hight-list-todo/hight-list-todo.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,7 @@ import { HightListTodoComponent } from './component/hight-list-todo/hight-list-t
   ],
   imports: [
     BrowserModule,
+    NgxPaginationModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,

@@ -15,7 +15,8 @@ export class EditTodoComponent implements OnInit {
   sub: Subscription;
   editTodoForm: FormGroup = new FormGroup({
     name: new FormControl(''),
-    description: new FormControl('')
+    description: new FormControl(''),
+    rank: new FormControl('')
   });
 
   constructor(private todoService: TodoService,
@@ -32,7 +33,8 @@ export class EditTodoComponent implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
 
   editTodo() {
@@ -40,15 +42,23 @@ export class EditTodoComponent implements OnInit {
       id: this.todo.id,
       status: this.todo.status,
       name: this.editTodoForm.value.name,
-      description: this.editTodoForm.value.description,
-      rank: this.todo.rank
+      description: this.editTodoForm.get('description').value,
+      // rank: this.todo.rank,
+      rank: this.editTodoForm.get('rank').value
     };
-    this.todoService.edit(todo1).subscribe(() => {
-      console.log(todo1);
-      location.reload();
-    }, error => {
-      console.log(error);
-    });
+    if (!this.todo.name) {
+      alert('chưa có tên!');
+    } else {
+      this.todoService.edit(todo1).subscribe(() => {
+        alert("thành công!");
+        console.log(todo1);
+        location.reload();
+      }, error => {
+        console.log(error);
+      });
+    }
+
   }
+
 
 }
